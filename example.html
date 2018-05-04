@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Magnifier</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.magnifier.min.js"></script>
+<script type="text/javascript">
+function init(k) {
+ $(k).magnifier({magnify:10, region:{h:38.7, w:38.7}, display:$('#display')});
+}
+$(document).ready(function() {
+ $('#button').click(function() {
+  init($('.artwork'));
+  $('#button').remove();
+ });
+});
+</script>
+<style>
+body{
+ margin:0px;
+ padding:0px;
+}
+.artwork {
+ width:100px;
+}
+.mgnfr-portal {
+ position:absolute;
+ top:0px;
+ left:100px;
+}
+#button {
+ background-color:#eaefea;
+ color:#6e746e;
+ font-family:'Open Sans', Tahoma;
+ letter-spacing:1px;
+ text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Great_Wave_off_Kanagawa2.jpg/640px-Great_Wave_off_Kanagawa2.jpg" class="artwork"><br>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/El_coloso.jpg/696px-El_coloso.jpg" class="artwork"><br>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Honor%C3%A9_Daumier_017_%28Don_Quixote%29.jpg/533px-Honor%C3%A9_Daumier_017_%28Don_Quixote%29.jpg" class="artwork"><br>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Claude_Monet_-_Waterloo_Bridge%2C_Effet_de_Soleil.jpg/800px-Claude_Monet_-_Waterloo_Bridge%2C_Effet_de_Soleil.jpg" class="artwork"><br>
+<button id="button">Magnify!</button>
+<div id="display"></div>
+</body>
+</html>
